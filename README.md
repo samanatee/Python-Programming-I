@@ -1,7 +1,7 @@
 # Python Programming I (COM SCI-X 418.104B)
 
-Instructor: Amir Hallajpour
-Email: amir.hallajpour@gmail.com
+Instructor: Amir Hallajpour <br>
+Email: amir.hallajpour@gmail.com 
 
 ## Description
 Python is a high-level, dynamically typed, and portable programming language that excels when the cost of software development outweighs performance considerations, which is quite often in practice. Python covers similar territory as Perl and is similarly an open-source product, but it is considered easier to learn, write, and maintain. NASA, Industrial Light and Magic (ILM), Honeywell, and many other companies all use Python to handle jobs for which classical programming languages are not well-suited. This course introduces Python and its libraries as a general programming environment, then applies Python to real-world problems, such as website development, database access, text processing, XML editing, GUI development, and system administration.
@@ -20,14 +20,13 @@ At the end of this course, students will gain some theoretical programming knowl
 At the end of this course, students will be able to manipulate different data types, work with real world files and automate simple repetitive tasks - all in Python.
 
 ## Materials
-Introduction to Computing Using Python (2nd Edition)
-Author: Ljubomir Perkovic
-
+Introduction to Computing Using Python (2nd Edition) <br>
+Author: Ljubomir Perkovic <br>
 ISBN : 978-1-118-89094-3
 
 ## Evaluation 
 
-###Criteria
+### Criteria
 Grading:
 - Weekly Assignments 70%
 - Final 30%
