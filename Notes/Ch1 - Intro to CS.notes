@@ -20,6 +20,14 @@
 	  	3. hard drive: where files are stored
 	  		- RAM loses all data when the computer is shut down, but the hard drive can store a file whether computer is on or off
 	  - an #interface# exists between application programs written by a developer and the hardware in order to prevent working with the hardware directly
- 
+
+	 1.2.2 Operating Systems
+  	------------------------ 
+  	- #Operating Systems#: manage access to hardware by application programs
+  		1. protects hardware from misuse by the program or the programmer
+  		2. provides an interface through which programs can request services from hardware devices
+
+
+
   1.3 Python Programming Language
   ---------------------------------
