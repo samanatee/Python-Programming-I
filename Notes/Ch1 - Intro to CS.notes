@@ -1,33 +1,58 @@
------------ Introduction to Computer Science ------------
-
+--- Introduction to Computer Science ---
+  
   1.1 Computer Science
   ---------------------
-  - #computer science#: study of the theoretical foundations of information and computation and their practical implementation on computer systems
+  1. #computer science#: study of the theoretical foundations of information and computation and their practical implementation on computer systems
   
   1.2 Computer Systems
   --------------------
-  - #computer system#: combination of hardware and software that work together in order to execute application programs
-  	- can refer to a single computer or a collection of computers connected to a network
+  1. #computer system#: combination of hardware and software that work together in order to execute application programs
+  		a.  can refer to a single computer or a collection of computers connected to a network
   	
   	1.2.1 Computer Hardware
   	-----------------------  
-	  - #hardware#: physical components of a computer system
-	  	1. central processing unit (CPU): where computation occurs
-	  	2. main memory a.k.a. random access memory (RAM): where program instructions and data are stores when program executes
-	  		- the CPU fetches those instructions/data from and stores those results in RAM
-	  		- bus: set of wirings that carry instructions and data between the CPU and main memory
-	  			- as well as the hard drive and various adaptors (connected to external devices)
-	  	3. hard drive: where files are stored
+  	1. #hardware#: physical components of a computer system
+  	 	a. central processing unit (CPU): where computation occurs
+  		b.  main memory a.k.a. random access memory (RAM): where program instructions and data are stores when program executes
+  	  		- the CPU fetches those instructions/data from and stores those results in RAM
+  	  		- bus: set of wirings that carry instructions and data between the CPU and main memory as well as the hard drive and various adaptors (connected to external devices)
+	  	c. hard drive: where files are stored
 	  		- RAM loses all data when the computer is shut down, but the hard drive can store a file whether computer is on or off
-	  - an #interface# exists between application programs written by a developer and the hardware in order to prevent working with the hardware directly
+	  	d. an #interface# exists between application programs written by a developer and the hardware in order to prevent working with the hardware directly
 
 	 1.2.2 Operating Systems
-  	------------------------ 
-  	- #Operating Systems#: manage access to hardware by application programs
-  		1. protects hardware from misuse by the program or the programmer
-  		2. provides an interface through which programs can request services from hardware devices
+   ------------------------ 
+  	1. #Operating Systems#: manage access to hardware by application programs
+  		a. protects hardware from misuse by the program or the programmer
+  		b. provides an interface through which programs can request services from hardware devices
 
+   1.2.3 Networks and Network Protocols
+   ------------------------------------
+  	1. #internetwork#: connection of several networks (e.g. The Internet)
 
+   1.2.4 Programming Languages
+   ---------------------------
+  	1. instructions that are actually executed are #machine language# instructions, represented by binary notation (0s and 1s)
+  	2. programming languages and language translators enable developers to write human readable language and translate them into machine language
+  		a. depending on the programming language, language translators are referred to as *assemblers*, *compilers*, or *interpreters*
+  		b. programming languages can be specialized for 3D modeling or databases, or general-purpose (C, C++, Java, and Python)
+      c. *Integrated Development Environments* (IDEs): include a text editor, language translator, automated tools for creating binary executables, and a debugger
+   1.2.5 Software Libraries
+    ------------------------
+    1. #software libraries#: defined instructions for accessing web pages or databases; separate from core language (i.e. Python)
+      a. must explicitly be *imported* into a library in order to be used
+      b. *Application Programming Interface* (API): description of how to use the instructions defined in a library 
+  		
+  1.3 Computational Thinking
+  --------------------------
+  1. #Abstraction#: process of distilling relevant aspects of a problem using logic and mathematics
+    a. *model*: result of abstraction; represents all relevant aspects of the problem
+  2. Algorithms
+  3. Data Types
+  4. Assignments and Execution Control Structures
+    a. assignment statement
+    b. conditional control structure
+    c. iteration control structure
+    d. execution control Structures
+    e. flow of execution
 
-  1.3 Python Programming Language
-  ---------------------------------
