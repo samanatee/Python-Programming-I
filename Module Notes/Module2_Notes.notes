@@ -82,10 +82,53 @@ for i in range (20, 10, 5):
 	unsorted = [93, 2, 3]
 	checkSorted(unsorted)
 
+	[end]
 
+3. Nested Loop Patterns
+	- Exercise: 
+	[python]
+	'''
+	Write function inBoth()
+		- returns True if there is an item that is common 
+		to both lists; False if otherwise
+	'''
+
+	def inBoth(list):
+		for x in range(len(list))
+			if list[i][0] == list[i][]
 
 
 	[end]
 
+	[python]
+	'''
+	Write a function xmult() that takes two lists of integers as input and returns a list containing
+	all products of integers from the first list with the integers from the second list
+	'''
+	def xmult(a, b):
+	c = []
+	for i in range(len(a)):
+		for j in range(len(b)):
+			c.append(a[i] * b[j])
+	print(c)
 
+	xmult([2], [1,5])
+	xmult([2, 3], [1, 5])
+	xmult([3, 4, 1], [2, 0])
+
+	[end]
+
+4. format()
+	[python]
+first = 'John'
+last = 'Doe'
+street = 'Main Street'
+number = 123
+city = 'AnyCity'
+state = 'AS'
+zipcode = '09876'
+
+
+print('{} {}\n{} {}\n{}, {} {}'.format(first, last, number, street, city, state, zipcode))
+	[end]
 
