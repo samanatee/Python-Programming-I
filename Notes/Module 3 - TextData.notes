@@ -131,4 +131,3 @@ zipcode = '09876'
 
 print('{} {}\n{} {}\n{}, {} {}'.format(first, last, number, street, city, state, zipcode))
 	[end]
-
