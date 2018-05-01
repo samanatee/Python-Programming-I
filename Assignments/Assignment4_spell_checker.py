@@ -9,14 +9,14 @@ SPECS:
 import string
 
 def read_reference():
-	with open('ref.txt') as reference_file:	# automatically closes file
-		reference_file.read()	# Read the reference file “ref.txt”
-		reference_container = set()	# Create empty set to store words from reference file
-		for row in reference_file: 
-			row = row.strip('\n')
-			reference_container.add(row)
-		return reference_container
-	
+	reference_file = open('ref.txt', 'r')  # Read the reference file “ref.txt”
+	reference_container = set()    # Create empty set to store words from reference file
+	for row in reference_file: 
+		row = row.strip('\n')
+		reference_container.add(row)
+	reference_file.close()
+	return(reference_container)
+
 
 def get_text():
     while True:
@@ -28,36 +28,38 @@ def get_text():
         except:
             print('Error! File not found!')
 
-def read_text(infile):
-	text_container = {}	# Create empty dictionary to store the words the text file
-	readlines = infile.readlines()
-	for line in readlines: 
-		line = line.translate(str.maketrans('', '', string.punctuation))	# Remove punctuation
-		words = line.split()
-		for words in words:
-			if not words.isdigit():		# Remove digits
-				print(words)
-		# text_container[line] = 1
-		# print(text_container)
-	
-    # Keys are the words in the file and values are the number of times the word is used in the file
-    # Eliminate the punctuation when constructing the dictionary from the input file
-    # If numbers are being use in the input file, they shouldn’t be spellchecked
-	infile.close()
-
-def spell_check():
-	pass
+def spell_check(reference, word):
 # Spellcheck each word and then display the words that were misspelled
+	if word not in reference: 
+		print(word + ' is misspelled.')
 
-def word_counter():
-	pass
+def read_text(infile, reference):
+    text_counter = {}    # Create empty dictionary to store the words the text file
+    readlines = infile.readlines()
+    for line in readlines: 
+        line = line.translate(str.maketrans('', '', string.punctuation))    # Remove punctuation
+        text = line.split()
+        for word in text:
+            if not word.isdigit():        # Remove digits
+            	word = word.lower()		# convert to lowercase
+            	spell_check(reference, word)
+            	if word in text_counter:
+            		text_counter[word] += 1
+            	else:
+            	 text_counter[word] = 1
+    print(text_counter)
+    infile.close()
+
+
+def word_frequency():
+    pass
 # Prompt the user to enter a word 
 # Return the number of times the word was used in the file
 
 def main(): 
     reference_container = read_reference()
     text_file = get_text()
-    read_text(text_file)
+    read_text(text_file, reference_container)
     # call word_counter()
 
 if __name__ == '__main__':
