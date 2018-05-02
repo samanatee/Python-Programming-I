@@ -17,7 +17,6 @@ def read_reference():
     reference_file.close()
     return(reference_container)
 
-
 def get_text():
     while True:
         try: 
@@ -50,7 +49,6 @@ def read_text(infile, reference):
     return(word_counter)
     infile.close()
 
-
 def word_frequency(word_counter):
 # Prompt the user to enter a word
     word = input('\nEnter a word to see how many times it was used in the file: ')
@@ -61,8 +59,6 @@ def word_frequency(word_counter):
     else: 
         frequency = 0
     print('The word ' + repr(word) + ' is repeated ' + str(frequency) + ' times.')
-
-
 
 def main(): 
     reference_container = read_reference()
