@@ -9,13 +9,13 @@ SPECS:
 import string
 
 def read_reference():
-	reference_file = open('ref.txt', 'r')  # Read the reference file “ref.txt”
-	reference_container = set()    # Create empty set to store words from reference file
-	for row in reference_file: 
-		row = row.strip('\n')
-		reference_container.add(row)
-	reference_file.close()
-	return(reference_container)
+    reference_file = open('ref.txt', 'r')  # Read the reference file “ref.txt”
+    reference_container = set()    # Create empty set to store words from reference file
+    for row in reference_file: 
+        row = row.strip('\n')
+        reference_container.add(row)
+    reference_file.close()
+    return(reference_container)
 
 
 def get_text():
@@ -30,37 +30,45 @@ def get_text():
 
 def spell_check(reference, word):
 # Spellcheck each word and then display the words that were misspelled
-	if word not in reference: 
-		print(word + ' is misspelled.')
+    if word not in reference: 
+        print('Mispelled word ' + repr(word))
 
 def read_text(infile, reference):
-    text_counter = {}    # Create empty dictionary to store the words the text file
+    word_counter = {}    # Create empty dictionary to store the words the text file
     readlines = infile.readlines()
     for line in readlines: 
         line = line.translate(str.maketrans('', '', string.punctuation))    # Remove punctuation
         text = line.split()
         for word in text:
             if not word.isdigit():        # Remove digits
-            	word = word.lower()		# convert to lowercase
-            	spell_check(reference, word)
-            	if word in text_counter:
-            		text_counter[word] += 1
-            	else:
-            	 text_counter[word] = 1
-    print(text_counter)
+                word = word.lower()     # Convert to lowercase
+                spell_check(reference, word)
+                if word in word_counter:
+                    word_counter[word] += 1
+                else:
+                 word_counter[word] = 1
+    return(word_counter)
     infile.close()
 
 
-def word_frequency():
-    pass
-# Prompt the user to enter a word 
+def word_frequency(word_counter):
+# Prompt the user to enter a word
+    word = input('\nEnter a word to see how many times it was used in the file: ')
+    word = word.lower()     # Convert to lowercase
 # Return the number of times the word was used in the file
+    if word in word_counter:
+        frequency = word_counter[word]
+    else: 
+        frequency = 0
+    print('The word ' + repr(word) + ' is repeated ' + str(frequency) + ' times.')
+
+
 
 def main(): 
     reference_container = read_reference()
     text_file = get_text()
-    read_text(text_file, reference_container)
-    # call word_counter()
+    word_counter = read_text(text_file, reference_container)
+    word_frequency(word_counter)
 
 if __name__ == '__main__':
     main()
