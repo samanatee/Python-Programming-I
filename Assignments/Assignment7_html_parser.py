@@ -13,9 +13,6 @@ response which uses http
 import re
 import urllib.request
 
-from urllib.parse import urljoin
-
-
 class MyHTMLParser():
 
 	def __init__ (self, url):
