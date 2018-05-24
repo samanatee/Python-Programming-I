@@ -13,7 +13,10 @@ web. Specifically, the class must define:
 The constructor takes two strings as arguments, each giving a
 city name and state abbreviation, indicating the origin and destination.  For
 example: Tour(“New York, NY”, “Los Angeles, CA”)represents a tour that starts
-in New York city and ends in Los Angeles. 2. distance  This method takes a
+in New York city and ends in Los Angeles.
+
+2. distance
+This method takes a
 single (optional) argument indicating a mode – one of the strings ‘driving’
 (default), ‘biking, or ‘walking’.  It returns the total distance (in meters)
 covered by the tour for the indicated mode.  This method is where you will use
