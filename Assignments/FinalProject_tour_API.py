@@ -4,18 +4,26 @@
 
 
 '''
+from tkinter import Tk, Frame, Button, RAISED, RIDGE, Entry, END
 
-''' Create a class called Tour.  An instance of this class is to be
-instantiated with two US cities, and is used to fetch information from the
-web. Specifically, the class must define:
+# Create a class called Tour.
+class Tour():
 
-1. __init__
+# instantiated with two US cities
+# used to fetch information from the web.
+
+	def __init__ (self, city_1, city_2):
+
+'''
 The constructor takes two strings as arguments, each giving a
 city name and state abbreviation, indicating the origin and destination.  For
 example: Tour(“New York, NY”, “Los Angeles, CA”)represents a tour that starts
 in New York city and ends in Los Angeles.
+'''
 
-2. distance
+	def distance(self, mode):
+
+'''
 This method takes a
 single (optional) argument indicating a mode – one of the strings ‘driving’
 (default), ‘biking, or ‘walking’.  It returns the total distance (in meters)
@@ -25,13 +33,15 @@ locations in the tour and calculate the total distance.  If a response does
 not contain a distance value, the method should raise a ValueError exception.
 '''
 
-'''
-Graphical User Interface Description:  Create a class called TourGui. An
-instance of this class is to be instantiated in the main. Specifically the
-class must define:
 
-1. __init__ T
-he constructor doesn’t take any arguments. The constructor
+class TourGui(Frame):
+	def __init__(self):
+		self.title('Tour')
+
+		labels = ['Origin', 'Destination', 'Mode', 'Distance']
+
+'''
+The constructor doesn’t take any arguments. The constructor
 creates two frames in the window, a top frame and buttom frame. The top frame
 contains a  label and an entry widget for the following fields: origin,
 destination, and mode. The bottom frame contains a label and text widget for
@@ -50,3 +60,12 @@ message box shows up indicating the distance was not found:
 '''
 
 
+
+
+def main():
+	root = Tk()
+	TourGui(root)
+	root.mainloop()
+
+if __name__ == '__main__':
+	main()
