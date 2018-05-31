@@ -59,10 +59,33 @@ If the distance was not found between the origin and the destination, a
 message box shows up indicating the distance was not found:
 '''
 
+def search_on_google():
+	# request object
+	user_agent = 'Mozilla/5.0'
+	headers = {'User-Agent': user_agent}
 
+	origins = input('Origin: ')
+	destinations = input('Destination: ')
+	sensor = input('Sensor: ')
+	mode = input('Mode: ')
+
+	value = {'q': search_query}
+
+	url = 'http://maps.googleapis.com/maps/api/distancematrix/json?'
+	data = urllib.parse.urlencode(value)
+
+	url = url + data
+	req = urllib.request.Request(url, None, headers)
+	response = urllib.request.urlopen(req)
+	html = response.read().decode()
+
+	return url, html
 
 
 def main():
+
+	url, query = search_on_google()
+
 	root = Tk()
 	TourGui(root)
 	root.mainloop()
