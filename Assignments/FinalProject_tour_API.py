@@ -49,36 +49,44 @@ class TourGui(Frame):
 		frame_2 = Frame(self, borderwidth = 5)
 		frame_2.pack(pady = 45)
 
-		origin_label = Label(frame_1, font = ('Helvetica', 16), text = 'Origin')
-		origin_label.pack(padx = 5, pady = 5)
+		self.origin_label = Label(frame_1, font = ('Helvetica', 16), text = 'Origin')
+		self.origin_label.pack(padx = 5, pady = 5)
 
-		origin_entry = Entry(frame_1, borderwidth = 5, width = 25, font = ('Helvetica', 12))
-		origin_entry.pack(fill = X, padx = 5)
+		self.origin_entry = Entry(frame_1, borderwidth = 5, width = 25, font = ('Helvetica', 12))
+		self.origin_entry.pack(fill = X, padx = 5)
 
-		destination_label = Label(frame_1, font = ('Helvetica', 16), text = 'Destination')
-		destination_label.pack(padx = 5, pady = 5)
+		self.destination_label = Label(frame_1, font = ('Helvetica', 16), text = 'Destination')
+		self.destination_label.pack(padx = 5, pady = 5)
 
-		destination_entry = Entry(frame_1, borderwidth = 5, width = 25, font = ('Helvetica', 12))
-		destination_entry.pack(fill = X, padx = 5)
+		self.destination_entry = Entry(frame_1, borderwidth = 5, width = 25, font = ('Helvetica', 12))
+		self.destination_entry.pack(fill = X, padx = 5)
 
-		mode_label = Label(frame_1, font = ('Helvetica', 16), text = 'Mode')
-		mode_label.pack(padx = 5, pady = 5)
+		self.mode_label = Label(frame_1, font = ('Helvetica', 16), text = 'Mode')
+		self.mode_label.pack(padx = 5, pady = 5)
 
-		mode_entry = Entry(frame_1, borderwidth = 5, width = 25, font = ('Helvetica', 12))
-		mode_entry.pack(fill = X, padx = 5)
+		self.mode_entry = Entry(frame_1, borderwidth = 5, width = 25, font = ('Helvetica', 12))
+		self.mode_entry.pack(fill = X, padx = 5)
 
-		distance_label = Label(frame_2, font = ('Helvetica', 16), text = 'Distance (m)')
-		distance_label.pack(padx = 5, pady = 5)
+		self.distance_label = Label(frame_2, font = ('Helvetica', 16), text = 'Distance (m)')
+		self.distance_label.pack(padx = 5, pady = 5)
 
-		distance_entry = Entry(frame_2, borderwidth = 5, width = 25, font = ('Helvetica', 12))
-		distance_entry.pack(fill = X, padx = 5)
+		self.distance_entry = Entry(frame_2, borderwidth = 5, width = 25, font = ('Helvetica', 12))
+		self.distance_entry.pack(fill = X, padx = 5)
 
-		distance_button = Button(frame_2, text = "Get Distance", font = ('Helvetica', 12), relief = RAISED, borderwidth = 5, command = self.click_command())
-		distance_button.pack(side = BOTTOM, padx=5, pady=5)
+		self.distance_button = Button(frame_2, text = "Get Distance", font = ('Helvetica', 12), relief = RAISED, borderwidth = 5, command = self.click_command)
+		self.distance_button.pack(side = BOTTOM, padx=5, pady=5)
 
 	def click_command(self):
 		# request object
-		print('hey')
+		print(self.origin_entry.get())
+		print(self.destination_entry.get())
+		print(self.mode_entry.get())
+
+		# if (self.mode_entry.get().lower() != 'driving' and self.mode_entry.get().lower() !='biking' and self.mode_entry.get().lower() != 'walking'):
+		if (self.mode_entry.get().lower() != 'driving' and != 'biking' and != 'walking'):
+			print('invalid')
+
+
 		# user_agent = 'Mozilla/5.0'
 		# headers = {'User-Agent': user_agent}
 
@@ -122,7 +130,7 @@ def main():
 	# url, query = search_on_google()
 	root = Tk()
 	tour_application = TourGui()
-	Tour(tour_application)
+	#Tour(tour_application)
 	root.mainloop()
 
 
